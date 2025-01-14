@@ -1,0 +1,220 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root[data-theme="light"] {
+    --bg-color: #f0f2f5;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-bg-rgb: 255, 255, 255;
+    --text-color: #333;
+    --text-secondary: #666;
+    --btn-bg: rgba(248, 249, 250, 0.9);
+    --btn-hover: rgba(233, 236, 239, 0.95);
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --card-bg: rgba(45, 45, 45, 0.9);
+    --card-bg-rgb: 45, 45, 45;
+    --text-color: #ffffff;
+    --text-secondary: #cccccc;
+    --btn-bg: rgba(61, 61, 61, 0.9);
+    --btn-hover: rgba(77, 77, 77, 0.95);
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+    ), url('/assets/mongolbackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.portfolio-card {
+    background-color: rgba(var(--card-bg-rgb), 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.profile-pic-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+
+.profile-pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--text-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-pic {
+    opacity: 0;
+}
+
+.profile-pic-container:hover .main-pic {
+    opacity: 0;
+}
+
+.profile-pic-container:hover .hover-pic {
+    opacity: 1;
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.title {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+.social-links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 40px;
+}
+
+.icon-links {
+    display: flex;
+    gap: 30px;
+}
+
+.icon-links a {
+    color: var(--text-color);
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+
+.icon-links a:hover {
+    transform: translateY(-2px);
+}
+
+/* Specific hover colors for each icon */
+.icon-links a[href*="linkedin"]:hover {
+    color: #007bff;
+}
+
+.icon-links a[href*="github"]:hover {
+    color: #faa356;
+}
+
+.icon-links a[href*="resume"]:hover {
+    color: #2E6F40;
+}
+
+.social-btn {
+    min-width: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: var(--btn-bg);
+    backdrop-filter: blur(5px);
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background-color: var(--btn-hover);
+    transform: translateY(-2px);
+}
+
+.social-btn i {
+    font-size: 20px;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .portfolio-card {
+        padding: 20px;
+    }
+}
+
+/* Add new styles for theme toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-switch {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--btn-bg);
+    transition: all 0.3s ease;
+}
+
+#theme-switch:hover {
+    background-color: var(--btn-hover);
+    transform: scale(1.1);
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.text-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.text-info h1 {
+    margin: 0;
+}
+
+.text-info .title {
+    margin: 0;
+}
