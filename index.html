@@ -1,65 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>telmen.info</title>
-    <link rel="icon" href="logo.png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body>
-    <div class="theme-toggle">
-        <button id="theme-switch">
-            <i class="fas fa-moon"></i>
-        </button>
-    </div>
-    <div class="container">
-        <div class="portfolio-card">
-            <div class="profile-info">
-                <div class="profile-pic-container">
-                    <img src="/assets/prof.jpeg" alt="Profile Picture" class="profile-pic main-pic">
-                    <img src="/assets/young.jpeg" alt="Young Picture" class="profile-pic hover-pic">
-                </div>
-                <div class="text-info">
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Telmen Bayarbaatar</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="./assets/logo.png" type="image/png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="profile">             
+                <img src="./assets/prof.jpeg" class="profile-pic">
+                <div class="info">
                     <h1>Telmen Bayarbaatar</h1>
-                    <p class="title"><i class="fas fa-location-dot"></i> Silver Spring, MD</p>
+                    <p>CS @ UMD</p>
+                    <p>bayarakh@gmail.com</p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/telmenbayarbaatar/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:bayarakh@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="social-links">
-                <div class="icon-links">
-                    <a href="https://linkedin.com/in/telmenbayarbaatar" target="_blank">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://github.com/TelmenBay" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="/assets/Telmen_Resume.pdf" target="_blank">
-                        <i class="fas fa-file-alt"></i>
-                    </a>
-                </div>
-                <a href="mailto:bayarakh@gmail.com" class="social-btn">
-                    <i class="fas fa-envelope"></i> Contact Me
-                </a>
+            <div class="intro">
+                <h2>Hello.</h2>
+                <p> 
+                    I am a rising Junior at the <span style="color: black; font-weight: bold;">University of Maryland</span>
+                    studying Computer Science expected to graduate May 2027. 
+                </p>
+                <p>
+                    On the tech side, I’m deeply interested in
+                    machine learning and love building things, whether it’s crafting apps or designing
+                    websites that make life easier or more engaging.
+                </p>
+                <p>
+                    If I'm not at school, 
+                    you’ll usually find me on a basketball court, 
+                    sketching with a pencil in hand, or laughing with friends and family. 
+                </p>
+                <a class="button" target="_blank" href="./assets/Telmen_Resume.pdf">Resume</a>
             </div>
         </div>
-    </div>
-    <script>
-        const themeSwitch = document.getElementById('theme-switch');
-        const html = document.documentElement;
-        const icon = themeSwitch.querySelector('i');
-
-        themeSwitch.addEventListener('click', () => {
-            if (html.getAttribute('data-theme') === 'light') {
-                html.setAttribute('data-theme', 'dark');
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                html.setAttribute('data-theme', 'light');
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        });
-    </script>
-</body>
+        
+        
+    </body>
 </html>

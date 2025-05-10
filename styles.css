@@ -1,220 +1,97 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root[data-theme="light"] {
-    --bg-color: #f0f2f5;
-    --card-bg: rgba(255, 255, 255, 0.9);
-    --card-bg-rgb: 255, 255, 255;
-    --text-color: #333;
-    --text-secondary: #666;
-    --btn-bg: rgba(248, 249, 250, 0.9);
-    --btn-hover: rgba(233, 236, 239, 0.95);
-}
-
-:root[data-theme="dark"] {
-    --bg-color: #1a1a1a;
-    --card-bg: rgba(45, 45, 45, 0.9);
-    --card-bg-rgb: 45, 45, 45;
-    --text-color: #ffffff;
-    --text-secondary: #cccccc;
-    --btn-bg: rgba(61, 61, 61, 0.9);
-    --btn-hover: rgba(77, 77, 77, 0.95);
-}
-
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(
-        rgba(0, 0, 0, 0.5),
-        rgba(0, 0, 0, 0.5)
-    ), url('/assets/mongolbackground.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
     min-height: 100vh;
+    margin-bottom: 70px;
+    font-family: Arial, sans-serif;
+    color: #333;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    transition: background-color 0.3s ease;
-}
-
-.container {
-    width: 100%;
-    max-width: 600px;
     padding: 20px;
+    background-color: #fff;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.portfolio-card {
-    background-color: rgba(var(--card-bg-rgb), 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
-}
-
-.profile-pic-container {
-    position: relative;
-    width: 150px;
-    height: 150px;
-}
-
-.profile-pic {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid var(--text-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.hover-pic {
-    opacity: 0;
-}
-
-.profile-pic-container:hover .main-pic {
-    opacity: 0;
-}
-
-.profile-pic-container:hover .hover-pic {
-    opacity: 1;
-    transform: scale(1.05);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+.profile {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 h1 {
-    color: var(--text-color);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.profile-pic {
+    width: 160px;
+    height: 160px;
+    border: 2px solid #333;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    margin-right: 15px;
+    color: #333;
+    font-size: 24px;
+    transition: color 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: #0077b5; /* LinkedIn blue color */
+}
+
+.social-icons a:last-child:hover {
+    color: #cd4f4f; /* Gmail red color */
+}
+
+.intro {
+    text-align: left;
+    max-width: 500px;
+    width: 100%;
+}
+
+.intro h2 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5em;
     margin-bottom: 10px;
 }
 
-.title {
-    color: var(--text-secondary);
-    margin-bottom: 30px;
+.intro p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
-.social-links {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-    gap: 40px;
+.container img {
+    border: 3px solid #333;
+    object-fit: cover;
+    height: 180px;
+    width: 180px;
 }
-
-.icon-links {
-    display: flex;
-    gap: 30px;
-}
-
-.icon-links a {
-    color: var(--text-color);
-    font-size: 24px;
-    transition: all 0.3s ease;
-}
-
-.icon-links a:hover {
-    transform: translateY(-2px);
-}
-
-/* Specific hover colors for each icon */
-.icon-links a[href*="linkedin"]:hover {
-    color: #007bff;
-}
-
-.icon-links a[href*="github"]:hover {
-    color: #faa356;
-}
-
-.icon-links a[href*="resume"]:hover {
-    color: #2E6F40;
-}
-
-.social-btn {
-    min-width: 160px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background-color: var(--btn-bg);
-    backdrop-filter: blur(5px);
-    color: var(--text-color);
-    text-decoration: none;
-    padding: 12px 20px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
-
-.social-btn:hover {
-    background-color: var(--btn-hover);
-    transform: translateY(-2px);
-}
-
-.social-btn i {
-    font-size: 20px;
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
-    
-    .portfolio-card {
-        padding: 20px;
-    }
-}
-
-/* Add new styles for theme toggle */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-}
-
-#theme-switch {
-    background: none;
+.button {
+    background-color: #000000;
     border: none;
-    color: var(--text-color);
-    font-size: 24px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 50%;
-    width: 45px;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--btn-bg);
-    transition: all 0.3s ease;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 
-#theme-switch:hover {
-    background-color: var(--btn-hover);
-    transform: scale(1.1);
-}
-
-.profile-info {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.text-info {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.text-info h1 {
-    margin: 0;
-}
-
-.text-info .title {
-    margin: 0;
-}
