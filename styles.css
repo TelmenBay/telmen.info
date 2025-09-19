@@ -55,6 +55,11 @@ h1 {
     color: #0077b5; /* LinkedIn blue color */
 }
 
+#github:hover {
+    color: #00b500; /* Green color */
+}
+
+
 .social-icons a:last-child:hover {
     color: #cd4f4f; /* Gmail red color */
 }
