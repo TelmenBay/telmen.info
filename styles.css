@@ -59,6 +59,10 @@ h1 {
     color: #00b500; /* Green color */
 }
 
+#x:hover {
+    color: #07b3b9; /* Green color */
+}
+
 
 .social-icons a:last-child:hover {
     color: #cd4f4f; /* Gmail red color */
